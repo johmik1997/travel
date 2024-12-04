@@ -1,6 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+
+
+import React, { useState } from 'react';
+import './flashes.css';
+export default function App(){
+    return <Flash />
+}
 const question=[
     {id:1,
     question:'what language is react based on?',
@@ -28,12 +32,18 @@ const question=[
         answer:'control element'
     }]
 function Flash(){
-return (<div className='flashs'>
-    {question.map((question)=><div><p>{question}</p></div>)}
+    const [selectedId, setSelectedid]=useState(1);
+function handleClick(id){
+  setSelectedid(id!==selectedId?id:null);
+}
+return (<div className='flashs' >
+ 
+    {question.map((question)=>(
+      <div className={selectedId==question.id?'answers':'flashes'} 
+      key={question.id}  onClick={()=>handleClick(question.id)}>
+        
+        <p>{selectedId==question.id?question.answer:question.question}</p>
+        </div>))}
+
 </div>)
 }
-
-const root=ReactDOM.createRoot(document.querySelector('root'));
-root.render(<React.StrictMode>
-      <Flash />
-</React.StrictMode>);

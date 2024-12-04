@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   
   html {
     font-size: 62.5%;
@@ -14,5 +10,32 @@
     color: #5a3e2b;
     font-family: "Quicksand";
     font-weight: 500;
+    text-align: center;
   }
+  .flashs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  .flashes{
+    
+    border: 0.5px solid black;
+    background-color: rgb(255, 249, 249);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+  .answers{
   
+    border: 2px solid black;
+    width: auto;
+    background-color: red;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
